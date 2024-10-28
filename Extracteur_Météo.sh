@@ -17,3 +17,4 @@ DATE=$(date +"%Y-%m-%d")
 HEURE=$(date +"%H:%M")
 
 echo "$DATE - $HEURE - $VILLE : $TEMP_ACTUELLE - $TEMP_PREVISION" >> $FICHIER
+echo "Les données météo ont été enregistrées dans $FICHIER"
