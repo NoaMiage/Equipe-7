@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -z "$1" ]; then
+    echo "Veuillez spécifier le nom d'une ville."
+    exit 1
+fi
+
 VILLE=${1:-Paris}  #on prend la ville de Paris comme exemple si aucune ville n'est donné
 FICHIER="meteo.txt"
 
@@ -12,5 +17,3 @@ DATE=$(date +"%Y-%m-%d")
 HEURE=$(date +"%H:%M")
 
 echo "$DATE - $HEURE - $VILLE : $TEMP_ACTUELLE - $TEMP_PREVISION" >> $FICHIER
-
-echo "Les données météo ont été enregistrées dans $FICHIER"
