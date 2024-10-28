@@ -1,11 +1,11 @@
 #!/bin/bash
 
 if [ -z "$1" ]; then
-    echo "Veuillez spécifier le nom d'une ville."
-    exit 1
+	VILLE="PARIS"	#je dois mettre la ville défaut ici sinon j'aurais le message qu'il faut une ville en parametre
+else
+	VILLE="$1"
 fi
 
-VILLE=${1:-Paris}  #on prend la ville de Paris comme exemple si aucune ville n'est donné
 FICHIER="meteo.txt"
 
 curl -s "wttr.in/$VILLE?format=%C+%t" > meteo_temp.txt
