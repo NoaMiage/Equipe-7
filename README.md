@@ -10,7 +10,7 @@ crontab -e
 Étape 2 : Comprendre la syntaxe de cron
 Dans notre exemple, nous souhaitons actualiser les données toutes les heures. Pour cela, il est important de comprendre la signification des étoiles (*) dans la commande cron, car elles permettent de définir la fréquence de la tâche.
 Cela se compose de cinq champs suivis de la commande à exécuter :
-* * * * */Equipe-7/Extracteur_Météo.sh
+*****/Equipe-7/Extracteur_Météo.sh
 La première étoile sert pour les minutes, la deuxièmes pour les heures, la troisième pour les jours du mois, la quatrième pour les mois de l'année et la dernière pour les jours de la semaine (à savoir pour le dimanche il y a deux chiffres possibles le 0 et le 7).
 
 Étape 3 : Configurer la tâche pour une actualisation toutes les heures
