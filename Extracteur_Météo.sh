@@ -8,8 +8,17 @@ else
 	VILLE="$1"
 fi
 
+#j'ajoute la variante 2 pour l'option de sauvegarde avec JSON
+JSON=false
+if [ "$2" == "--json" ]; then
+    JSON=true
+fi
+
 HISTORIQUE_FICHIER="meteo_$(date +%Y%m%d).txt"
 FICHIER="meteo.txt"
+
+#ajour d'un nouveau fichier JSON
+JSON="meteo_$(date +%Y%m%d).json"
 
 curl -s "wttr.in/$VILLE?format=%C+%t" > meteo_temp.txt
 
@@ -23,8 +32,21 @@ VENT=$(grep -Eo '[0-9]+ km/h' meteo_temp.txt | head -n 1)
 HUMIDITE=$(grep -Eo '[0-9]+%' meteo_temp.txt | head -n 1)
 VISIBILITE=$(grep -Eo '[0-9]+ km' meteo_temp.txt | head -n 1)
 
+if [ "$JSON" = true ]; then
+    
+	echo "{
+	\"date\": \"$DATE\",	
+	\"heure\": \"$HEURE\",
+	\"ville\": \"$VILLE\",
+	\"temperature\": \"$TEMP_ACTUELLE\",
+	\"vent\": \"$VENT\",
+	\"humidite\": \"$HUMIDITE\",
+	\"visibilite\": \"$VISIBILITE\"
+}" >> meteo.txt
+	echo "Les données météo ont été enregistrées en JSON dans $JSON"
+else
 #je rajoute les nouvelles données dans le echo 
-echo "$DATE - $HEURE - $VILLE : $TEMP_ACTUELLE - $TEMP_PREVISION - $VENT - $HUMIDITE - $VISIBILITE" >> $FICHIER
-echo "Les données météo ont été enregistrées dans $FICHIER"
-
-echo "$DATE - $HEURE - $VILLE : $TEMP_ACTUELLE - $TEMP_PREVISION- $VENT - $HUMIDITE - $VISIBILITE" >> "$HISTORIQUE_FICHIER"
+	echo "$DATE - $HEURE - $VILLE : $TEMP_ACTUELLE - $TEMP_PREVISION - $VENT - $HUMIDITE - $VISIBILITE" >> $FICHIER
+	echo "Les données météo ont été enregistrées dans $FICHIER"
+	echo "$DATE - $HEURE - $VILLE : $TEMP_ACTUELLE - $TEMP_PREVISION- $VENT - $HUMIDITE - $VISIBILITE" >> "$HISTORIQUE_FICHIER"
+fi
