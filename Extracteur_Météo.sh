@@ -8,6 +8,7 @@ else
 	VILLE="$1"
 fi
 
+HISTORIQUE_FICHIER="meteo_$(date +%Y%m%d).txt"
 FICHIER="meteo.txt"
 
 curl -s "wttr.in/$VILLE?format=%C+%t" > meteo_temp.txt
@@ -20,3 +21,5 @@ HEURE=$(date +"%H:%M")
 
 echo "$DATE - $HEURE - $VILLE : $TEMP_ACTUELLE - $TEMP_PREVISION" >> $FICHIER
 echo "Les données météo ont été enregistrées dans $FICHIER"
+
+echo "$DATE - $HEURE - $CITY : $TEMP_ACTUELLE - $TEMP_PREVISION" >> "$HISTORIQUE_FICHIER"
