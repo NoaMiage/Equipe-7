@@ -1,5 +1,9 @@
 # Equipe-7
 
+L'objectif de ce projet était de créer un script Shell en groupe, en appliquant nos nouvelles connaissances sur Git. Ce script permet d'extraire les informations météo pour une ville donnée, ou pour une ville par défaut, en utilisant le service en ligne wttr.in. Le script met à jour les données toutes les heures, et l'objectif principal était d'enregistrer la température actuelle ainsi que les prévisions pour le lendemain dans un fichier texte.
+
+Dans ce projet, nous avons également pu réaliser plusieurs variantes qui ont enrichi les fonctionnalités du script, rendant les informations plus précises et améliorant l'expérience utilisateur.
+
 Pour exécuter ce programme en script Shell, c'est très simple. Pour lancer le programme, tapez dans le terminal :
 ./extracteur_meteo.sh
 
