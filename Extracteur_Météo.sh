@@ -20,7 +20,15 @@ FICHIER="meteo.txt"
 #ajour d'un nouveau fichier JSON
 JSON="meteo_$(date +%Y%m%d).json"
 
-curl -s "wttr.in/$VILLE?format=%C+%t" > meteo_temp.txt
+#ajour d'un nouveau fichier pour les erreurs
+ERREUR="meteo_error.log"
+
+#si il y a une erreur pour ce connexter a wttr.in cela va afficher un message d'erreur
+if ! curl -s "wttr.in/$VILLE?format=%C+%t+%w+%h+%v" > meteo_temp.txt; then
+    echo "Pas possible de se connexter a wttr.in pour $VILLE que vous aviez demandé" >> $ERREUR
+    echo "Une erreur de connexion a été enregistrée dans $ERREUR"
+    exit 1
+fi
 
 TEMP_ACTUELLE=$(grep -Eo '[-+]\d+°C' meteo_temp.txt | head -n 1)
 TEMP_PREVISION=$(curl -s "wttr.in/$VILLE?format=3" | grep -Eo '[-+]\d+°C')
