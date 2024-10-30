@@ -1,5 +1,22 @@
 # Equipe-7
 
+L'objectif de ce projet était de créer un script Shell en groupe, en appliquant nos nouvelles connaissances sur Git. Ce script permet d'extraire les informations météo pour une ville donnée, ou pour une ville par défaut, en utilisant le service en ligne wttr.in. Le script met à jour les données toutes les heures, et l'objectif principal était d'enregistrer la température actuelle ainsi que les prévisions pour le lendemain dans un fichier texte.
+
+Dans ce projet, nous avons également pu réaliser plusieurs variantes qui ont enrichi les fonctionnalités du script, rendant les informations plus précises et améliorant l'expérience utilisateur.
+
+Pour exécuter ce programme en script Shell, c'est très simple. Pour lancer le programme, tapez dans le terminal :
+./extracteur_meteo.sh
+
+Si vous utilisez uniquement cette commande, la ville par défaut sera utilisée. Si vous souhaitez obtenir la météo pour une ville spécifique, ajoutez le nom de la ville après la commande, comme ceci :
+./extracteur_meteo.sh Paris
+
+Par défaut, les données seront enregistrées dans un fichier texte classique. Pour enregistrer les données au format JSON, ajoutez l’option --json :
+./extracteur_meteo.sh Paris --json
+
+Si l’ordinateur ne parvient pas à se connecter au service météo, un message d’erreur s'affichera et sera enregistré dans un fichier d’erreurs pour le suivi.
+Enfin, si vous souhaitez exécuter le script automatiquement plusieurs fois par jour, par semaine ou par mois, vous pouvez utiliser cron. Les instructions pour configurer cron se trouvent dans le fichier en bas du fichier (README).
+
+
 Comment se servir de cron :
 Pour automatiser l'exécution de scripts, on utilise un planificateur de tâches appelé cron. Il est nécessaire que cron soit installé et dispose des permissions nécessaires pour fonctionner correctement.
 
