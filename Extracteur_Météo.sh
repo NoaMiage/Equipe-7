@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VILLE_DEFAUT="Lyon"
+VILLE_DEFAUT="Toulouse"
 
 if [ -z "$1" ]; then
 	VILLE=$VILLE_DEFAUT	#je dois mettre la ville défaut ici sinon j'aurais le message qu'il faut une ville en parametre
