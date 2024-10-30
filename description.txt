@@ -1,3 +1,15 @@
-L'objectif de ce projet était de créer un script Shell en groupe, en appliquant nos nouvelles connaissances sur Git. Ce script permet d'extraire les informations météo pour une ville donnée, ou pour une ville par défaut, en utilisant le service en ligne wttr.in. Le script met à jour les données toutes les heures, et l'objectif principal était d'enregistrer la température actuelle ainsi que les prévisions pour le lendemain dans un fichier texte.
+Pour le travail collaboratif, nous avons principalement échangé sur Teams, et Noa a été désignée cheffe de projet.
+Nous avons d'abord réparti les tâches, les versions du script et les variables à gérer, puis organisé notre avancement dans Jira pour suivre le projet.
+Un dépôt GitHub a été créé pour documenter nos progrès et gérer le code. 
+Nous avons utilisé Git pour faire des commits à chaque changement, ce qui nous a permis de suivre l'évolution du script et de voir l'état de chaque fonctionnalité. 
+À chaque étape, nous avons relu et testé le code de chacun pour garantir la cohérence du projet avant de fusionner nos contributions.
+Bien que nous n'ayons pas fixé de dates précises pour chaque tâche, une bonne organisation nous a permis de tout terminer dans les délais. 
+Jira a été très utile pour planifier et s'assurer que rien n'était oublié, et pour savoir qui faisait quoi.
+Nous avons également créé un fichier README pour expliquer comment exécuter le programme, comprendre l'objectif du projet, et utiliser cron pour l'automatisation. 
+Un fichier supplémentaire contient toutes les descriptions détaillées demandées pour le projet.
+Des tests ont été réalisés après chaque tâche pour vérifier le bon fonctionnement. 
+Par exemple, nous avons découvert qu'une fonction ne marchait pas sur macOS, ce qui empêchait certains membres d’utiliser le script. 
+Grâce aux tests, nous avons pu corriger ce problème rapidement et rendre le script compatible pour tout le monde.
+Cette organisation simple mais efficace nous a permis de travailler ensemble facilement, de rester coordonnés, et de finaliser le projet dans les temps.
 
-Dans ce projet, nous avons également pu réaliser plusieurs variantes qui ont enrichi les fonctionnalités du script, rendant les informations plus précises et améliorant l'expérience utilisateur.
+
