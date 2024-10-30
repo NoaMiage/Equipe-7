@@ -1,5 +1,18 @@
 # Equipe-7
 
+Pour exécuter ce programme en script Shell, c'est très simple. Pour lancer le programme, tapez dans le terminal :
+./extracteur_meteo.sh
+
+Si vous utilisez uniquement cette commande, la ville par défaut sera utilisée. Si vous souhaitez obtenir la météo pour une ville spécifique, ajoutez le nom de la ville après la commande, comme ceci :
+./extracteur_meteo.sh Paris
+
+Par défaut, les données seront enregistrées dans un fichier texte classique. Pour enregistrer les données au format JSON, ajoutez l’option --json :
+./extracteur_meteo.sh Paris --json
+
+Si l’ordinateur ne parvient pas à se connecter au service météo, un message d’erreur s'affichera et sera enregistré dans un fichier d’erreurs pour le suivi.
+Enfin, si vous souhaitez exécuter le script automatiquement plusieurs fois par jour, par semaine ou par mois, vous pouvez utiliser cron. Les instructions pour configurer cron se trouvent dans le fichier en bas du fichier (README).
+
+
 Comment se servir de cron :
 Pour automatiser l'exécution de scripts, on utilise un planificateur de tâches appelé cron. Il est nécessaire que cron soit installé et dispose des permissions nécessaires pour fonctionner correctement.
 
