@@ -18,7 +18,7 @@ HISTORIQUE_FICHIER="meteo_$(date +%Y%m%d).txt"
 FICHIER="meteo.txt"
 
 #ajour d'un nouveau fichier JSON
-JSON="meteo_$(date +%Y%m%d).json"
+FICHIER_JSON="meteo_$(date +%Y%m%d).json"
 
 #ajour d'un nouveau fichier pour les erreurs
 ERREUR="meteo_error.log"
@@ -50,8 +50,8 @@ if [ "$JSON" = true ]; then
 	\"vent\": \"$VENT\",
 	\"humidite\": \"$HUMIDITE\",
 	\"visibilite\": \"$VISIBILITE\"
-}" >> meteo.txt
-	echo "Les données météo ont été enregistrées en JSON dans $JSON"
+}" >> "$FICHIER_JSON"
+	echo "Les données météo ont été enregistrées en JSON dans $FICHIER_JSON"
 else
 #je rajoute les nouvelles données dans le echo 
 	echo "$DATE - $HEURE - $VILLE : $TEMP_ACTUELLE - $TEMP_PREVISION - $VENT - $HUMIDITE - $VISIBILITE" >> $FICHIER
